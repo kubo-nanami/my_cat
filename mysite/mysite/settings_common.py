@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'accounts.apps.AccountsConfig',
 
-    'django.contri.sites',
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
 ]

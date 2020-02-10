@@ -17,7 +17,7 @@ class IndexView(generic.TemplateView):
 
 
 class InquiryView(generic.FormView):
-    template_name = "inquiry.html"
+    template_name = "polls/inquiry.html"
     form_class = InquiryForm
     success_url = reverse_lazy('diary:inquiry')
 

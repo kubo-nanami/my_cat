@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'polls.apps.PollsConfig', #追加
     'bootstrap4', #追加
+    'django.contrib.sites', #追加
+    'allauth.account', #追加
 ]
 
 MIDDLEWARE = [
@@ -124,3 +127,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )#追加
+
+SITE_ID = 1
