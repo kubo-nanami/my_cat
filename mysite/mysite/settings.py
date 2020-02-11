@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth', #追加
     'allauth.account', #追加
     'accounts.apps.AccountsConfig', #追加
+    'allauth.socialaccount', #追加
 ]
 
 MIDDLEWARE = [
