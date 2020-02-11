@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig', #追加
     'bootstrap4', #追加
     'django.contrib.sites', #追加
+    'allauth', #追加
     'allauth.account', #追加
+    'accounts.apps.AccountsConfig', #追加
 ]
 
 MIDDLEWARE = [
@@ -129,3 +132,5 @@ STATICFILES_DIRS = (
 )#追加
 
 SITE_ID = 1
+
+AUTH_USER_MODEL = 'accounts.CustomUser' #追加

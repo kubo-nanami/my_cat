@@ -39,8 +39,12 @@ ACCOUNT_AUTHENTICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 
 
-LOGIN_REDIRECT_URL = 'diary:index'
+LOGIN_REDIRECT_URL = 'polls:index'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 
 
 ACCOUNT_LOGOUT_ON_GET = True
+
+MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'polls:management_list'

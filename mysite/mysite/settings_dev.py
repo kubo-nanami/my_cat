@@ -1,4 +1,5 @@
 from .settings_common import *
+import os
 
 #SECURITY WARNING: donc't run with debug turned on in production!
 DEBUG = True
@@ -46,8 +47,11 @@ LOGGING = {
     }
 }
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'piw36sk4n0@^(k1w6&d=2g3%=u3@ragv3o-4t!r^rsr23s@g=='
