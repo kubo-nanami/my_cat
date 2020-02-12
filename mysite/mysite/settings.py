@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account', #追加
     'accounts.apps.AccountsConfig', #追加
     'allauth.socialaccount', #追加
+
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,10 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'), #追加
+            os.path.join(BASE_DIR, 'templates', 'allauth') #追加
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +139,11 @@ STATICFILES_DIRS = (
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'accounts.CustomUser' #追加
+
+AUTHENTICATION_BACKENDS = [
+    #Needed to login by username in Django admin, regardless  of allauth
+    'django.contrib.auth.backends.ModelBackend',
+
+    #allauth specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+    ]

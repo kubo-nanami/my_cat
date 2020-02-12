@@ -59,7 +59,7 @@
                         <a class="nav-link" href="{% url 'polls:inquiry'%}">INQUIRY</a>
                      </li>
                      {% if user.is_authenticated %}
-                        <li class="nav-item{% block active_diary_list %}{% endblock %}">
+                        <li class="nav-item{% block active_management_list %}{% endblock %}">
                            <a class="nav-link" href="{% url 'polls:management_list'%}">MANAGEMENT LIST</a>
                         </li>
                      {% endif %}
@@ -67,14 +67,14 @@
                   <ul class="navbar-nav ml-auto">
                      {% if user.is_authenticated %}
                         <li class="nav-item">
-                           <a class="nav-link" href="{% url 'account:logout' %}">Log Out</a>
+                           <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                         </li>
                      {% else %}
                         <li class="nav-item">
-                           <a class="nav-link" href="{% url 'polls:signup' %}">Sign Up</a>
+                           <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                         </li>
                         <li class="nav-item {% block activ_login %}{% endblock %}">
-                           <a class="nav-link" href="{% url 'account:login' %}">Log In</a>
+                           <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                         </li>
                      {% endif %}
                   </ul>

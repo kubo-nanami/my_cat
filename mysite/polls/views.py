@@ -35,25 +35,26 @@ def form_valid(self, form):
     logger.info('Inquiry sent by{}'.format(form.cleaned_data['name']))
     return super().form_valid(form)
 
+
 class DiaryListView(LoginRequiredMixin, generic.ListView):
     model = Diary
-    template_name = 'management_list.html'
+    template_name = 'polls/management_list.html'
     paginate_by = 2
 
     def get_queryset(self):
-        management = Diary.objects.filter(user=self.request.user).order_by('-create_at')
+        management = Diary.objects.filter(user=self.request.user).order_by('-created_at')
         return management
 
 
 class DiaryDetailView(LoginRequiredMixin, generic.DetailView):
     model = Diary
-    template_name = 'management_detail.html'
+    template_name = 'polls/management_detail.html'
     pk_url_kwarg = 'id'
 
 
 class DiaryCreateView(LoginRequiredMixin, generic.CreateView):
     model = Diary
-    template_name = 'template_create.html'
+    template_name = 'polls/management_create.html'
     form_class = DiaryCreateForm
     success_url = reverse_lazy('polls:management_list')
 
@@ -71,7 +72,7 @@ class DiaryCreateView(LoginRequiredMixin, generic.CreateView):
     
 class DiaryUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Diary
-    template_name = 'management_update.html'
+    template_name = 'polls/management_update.html'
     form_class = DiaryCreateForm
 
     def get_success_url(self):
@@ -88,7 +89,7 @@ class DiaryUpdateView(LoginRequiredMixin, generic.UpdateView):
 
 class DiaryDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Diary
-    template_name = 'management_delete.html'
+    template_name = 'polls/management_delete.html'
     success_url = reverse_lazy('polls:management_list')
 
     def delete(self, request, *args, **kwargs):
