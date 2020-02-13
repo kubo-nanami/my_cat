@@ -23,5 +23,7 @@ class LoginView(generic.CreateView):
         return render(request, 'polls/management_list.html', {'user':user})
 
 class LogoutView(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('logout')
+    template_name = 'account/login.html'
+
+    def index(self, request):
+        return render(request, 'polls/index.html')
