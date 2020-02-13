@@ -30,16 +30,11 @@ class InquiryView(generic.FormView):
         return super().form_valid(form)
 
 
-def form_valid(self, form):
-    form.send_email()
-    logger.info('Inquiry sent by{}'.format(form.cleaned_data['name']))
-    return super().form_valid(form)
-
 
 class DiaryListView(LoginRequiredMixin, generic.ListView):
     model = Diary
     template_name = 'polls/management_list.html'
-    paginate_by = 2
+    paginate_by = 20
 
     def get_queryset(self):
         management = Diary.objects.filter(user=self.request.user).order_by('-created_at')
@@ -49,7 +44,7 @@ class DiaryListView(LoginRequiredMixin, generic.ListView):
 class DiaryDetailView(LoginRequiredMixin, generic.DetailView):
     model = Diary
     template_name = 'polls/management_detail.html'
-    pk_url_kwarg = 'id'
+    #pk_url_kwarg = 'id'
 
 
 class DiaryCreateView(LoginRequiredMixin, generic.CreateView):

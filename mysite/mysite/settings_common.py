@@ -48,4 +48,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = '/media/'
 
+
+LOGIN_URL = 'account:login'
 LOGIN_REDIRECT_URL = 'polls:management_list'
+LOGOUT_REDIRECT_URL = 'polls:index'

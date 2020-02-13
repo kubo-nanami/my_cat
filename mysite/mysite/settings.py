@@ -147,3 +147,9 @@ AUTHENTICATION_BACKENDS = [
     #allauth specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
     ]
+
+
+LOGIN_URL = 'account:login'
+
+LOGIN_REDIRECT_URL = 'polls:management_list'
+LOGOUT_REDIRECT_URL = 'polls:index'

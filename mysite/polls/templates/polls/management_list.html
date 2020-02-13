@@ -17,6 +17,7 @@
                 <div class="clearfix">
                     <a class="btn btn-primary float-right" href="{% url 'polls:management_create' %}">新規作成</a>
                 </div>
+                
                 {% for diary in diary_list %}
                     <div class="post-preview">
                         <a href="{% url 'polls:management_detail' diary.pk %}">

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'polls/base.html' %}
 {% load static %}
 
 {% block title %}日記詳細 | Category Management{% endblock %}
@@ -8,13 +8,14 @@
 
 {% block contents %}
 <div class="container">
-    <div class="my-div-style w-100">
-        <div class="row">
+    <div class="row">
+        <div class="my-div-style w-100">
+        
             <div class="col-3">
                 <strong>タイトル</strong>
             </div>
             <div class="col-9">
-                {{ objact.title}}
+                {{ object.title}}
             </div>
         </div>
         <hr>
