@@ -1,7 +1,6 @@
 Django
 django-heroku
 django-allauth
-django-bootstrap4
 gunicorn
 
 python==3.8.2
