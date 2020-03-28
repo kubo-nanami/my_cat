@@ -7,20 +7,20 @@
 
 
 {% block contents %}
-<div class="container">
-    <div class="row">
+<div class=".container">
+    <div class=".row">
         <div class="my-div-style w-100">
         
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <strong>タイトル</strong>
             </div>
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 {{ object.title}}
             </div>
         </div>
         <hr>
 
-        <div class="row">
+        <div class=".row">
             <div class="col-lg-3">
                 <strong>本文</strong>
             </div>
@@ -31,13 +31,13 @@
 
         <hr>
 
-        <div class="row">
+        <div class=".row">
             <div class="col-lg-3">
                 <strong>写真</strong>
             </div>
             <div class="col-lg-3">
                 {% if object.photo1 %}
-                    <img src="{{ object.photo1.url}}" width="200" height="200"/>
+                    <img src="{{ object.photo1.url}}" width="500" height="500"/>
                 {% endif %}
             </div>
             <div class="col-lg-3">
@@ -54,7 +54,7 @@
 
         <hr>
 
-        <div class="row">
+        <div class=".row">
             <div class="col-lg-3">
                 <strong>作成日時</strong>
             </div>
@@ -65,7 +65,7 @@
 
         <hr>
 
-        <div class="row">
+        <div class=".row">
             <div class="col-lg-3">
                 <strong>更新日時</strong>
             </div>
