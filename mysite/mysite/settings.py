@@ -139,6 +139,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]#追加
 
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'accounts.CustomUser' #追加
