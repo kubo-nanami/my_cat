@@ -7,8 +7,8 @@
 {% block contents %}
 <div class=".container">
     <div class=".row">
-        <div class="my-div-style">
-            <form method="post">
+        <div class="my-div-style w-100">
+            <form method="POST">
                 {% csrf_token %}
 
                 {{ form.non_field_errors }}
