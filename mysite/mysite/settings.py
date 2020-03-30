@@ -153,3 +153,10 @@ LOGIN_URL = 'account:login'
 
 LOGIN_REDIRECT_URL = 'polls:management_list'
 LOGOUT_REDIRECT_URL = 'polls:index'
+
+TEMPLATES_CENTEXT_PROCESSORS = [
+    "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+]
