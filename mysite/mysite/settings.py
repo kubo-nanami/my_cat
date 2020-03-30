@@ -14,6 +14,7 @@ import os
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#　manage.pyが入っている場所を示す
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -40,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'polls.apps.PollsConfig', #追加
+
     'bootstrap4', #追加
+
     'django.contrib.sites', #追加
     'allauth', #追加
     'allauth.account', #追加
@@ -66,7 +69,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'), #追加
-            os.path.join(BASE_DIR, 'templates', 'allauth') #追加
+            os.path.join(BASE_DIR,'accounts', 'templates') #追加
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -148,11 +151,21 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
     ]
 
+#メールアドレス認証に変更する設定
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+
+#サインアップにメールアドレス認証をはさむように設定
+ACCOUNT_EMAIL_VERIFICATION_METHOD = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
 
 LOGIN_URL = 'account:login'
 
+#ログイン・ログアウト後の遷移先を設定
 LOGIN_REDIRECT_URL = 'polls:management_list'
-LOGOUT_REDIRECT_URL = 'polls:index'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'polls:index'
+
+ACCOUNT_LOGOUT_ON_GET = True
 
 TEMPLATES_CENTEXT_PROCESSORS = [
     "django.core.context_processors.request",
