@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.contrib.staticfiles.urls import static
 
-from . import settings_common, settings_dev
+from . import settings_common, settings_dev, settings
 
 
 urlpatterns = [
