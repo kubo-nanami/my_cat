@@ -12,6 +12,19 @@ footer {
     margin-top: auto;
 }
 
-.my-div-style{
-    margin-top:6rem;
+.my-div-style {
+    margin-top: 6rem;
+    margin-left: 6rem;
+    margin-bottom: 6rem;
+    padding: 20px;
+}
+
+.form-group-row {
+    float: left;
+    padding: 20px;
+}
+
+.inquery-form {
+    width: 400px;
+    padding: 20px;
 }
