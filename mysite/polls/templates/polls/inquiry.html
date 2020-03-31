@@ -9,27 +9,29 @@
 <div class="container">
   <div class="row">
     <div class="my-div-style">
-      <form method="post">
-        {% csrf_token %}
+      <div class="mx-auto" style="width: 800px;">
+        <form method="post">
+          {% csrf_token %}
 
-        {{ form.non_field_errors }}
+          {{ form.non_field_errors }}
 
-        {% for field in form %}
-          <div class="form-group-row">
-            <label for="{{ field.id_for_label }}">
-              <strong>{{ field.label_tag }}</strong>
-            </label>
-            <div class="inquery-form">
-              {{ field }}
-              {{ field.errors }}
+          {% for field in form %}
+            <div class="form-group-row">
+              <label for="{{ field.id_for_label }}">
+                <strong>{{ field.label_tag }}</strong>
+              </label>
+              <div class="inquery-form">
+                {{ field }}
+                {{ field.errors }}
+              </div>
             </div>
+          {% endfor %}
+
+          <div class="offset-sm-4 col-sm-8">
+            <button class="btn btn=primary" type="submit">送信</button>
           </div>
-        {% endfor %}
-      
-        <div class="offset-sm-4 col-sm-8">
-          <button class="btn btn=primary" type="submit">送信</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

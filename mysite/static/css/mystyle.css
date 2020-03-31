@@ -20,11 +20,15 @@ footer {
 }
 
 .form-group-row {
-    float: left;
+    float: right;
     padding: 20px;
 }
 
 .inquery-form {
     width: 400px;
     padding: 20px;
+}
+
+.post-preview h3 {
+    font-size: 10px;
 }
